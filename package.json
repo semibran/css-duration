@@ -1,7 +1,7 @@
 {
   "name": "css-duration",
-  "version": "0.1.1",
-  "description": "Converts CSS durations to milliseconds.",
+  "version": "0.1.2",
+  "description": "Converts CSS-style durations to milliseconds.",
   "main": "index.js",
   "author": "Brandon Semilla (https://github.com/grandonbroseph)",
   "license": "MIT",
