@@ -1,17 +1,19 @@
-module.exports=(function(){
-  var n='1234567890'
-  return function(v){
-    var l=v.length
-    var i=l
-    while(i--)if(n.indexOf(v[i])!==-1)break
-    var s=i+1
-    var u=v.slice(s,l)
-    var q=parseFloat(v)
-    var m
-    if(u==='s')m=1000
-    else if(u==='m')m=60000
-    else if(u==='h')m=3600000
-    else if(u==='d')m=86400000
-    return q*m
+var strip = require('css-strip-units')
+
+module.exports = duration
+
+/**
+ * Normalize duration value into milliseconds.
+ */
+function duration (time) {
+  var number = parseFloat(time)
+  switch (strip(time)) {
+    case 'ms': return number
+    case 's': return number * 1000
+    case 'm': return number * 60000
+    case 'h': return number * 3600000
+    case 'd': return number * 86400000
+    case 'w': return number * 604800000
+    default: return null
   }
-}())
+}

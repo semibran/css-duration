@@ -1,0 +1,15 @@
+var test = require('tape')
+var duration = require('.')
+
+test('converting durations to milliseconds', function (t) {
+  t.is(duration('10ms'), 10, 'milliseconds')
+  t.is(duration('100s'), 100000, 'seconds')
+  t.is(duration('1m'), 60000, 'minutes')
+  t.is(duration('2h'), 7200000, 'hours')
+  t.is(duration('4d'), 345600000, 'days')
+  t.is(duration('3w'), 1814400000, 'weeks')
+  t.is(duration('0.5d'), 43200000, 'factional days')
+  t.is(duration('-1w'), -604800000, 'negative weeks')
+  t.is(duration('-.5m'),-30000, 'negative and factional minutes')
+  t.end()
+})
