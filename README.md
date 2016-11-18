@@ -49,9 +49,12 @@ Normalizes "unit-based time" (similar to CSS values) into a `Number` of millisec
 
 ```js
 duration('0.25d')
-// =>
+// => 21600000
+
+duration('-1w')
+// => -604800000
 ```
 
 ## License
 
-[Brandon Semilla](https://github.com/grandonbroseph) © MIT
+MIT © [Brandon Semilla](https://github.com/grandonbroseph)
