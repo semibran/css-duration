@@ -11,5 +11,7 @@ test('converting durations to milliseconds', function (t) {
   t.is(duration('0.5d'), 43200000, 'factional days')
   t.is(duration('-1w'), -604800000, 'negative weeks')
   t.is(duration('-.5m'),-30000, 'negative and factional minutes')
+  t.is(duration('1000'), 1000, 'no unit')
+  t.is(duration('1000lol'), null, 'unknown unit')
   t.end()
 })

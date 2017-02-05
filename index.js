@@ -1,4 +1,4 @@
-var strip = require('css-strip-units')
+var unit = require('css-get-unit')
 
 module.exports = duration
 
@@ -7,7 +7,8 @@ module.exports = duration
  */
 function duration (time) {
   var number = parseFloat(time)
-  switch (strip(time)) {
+  switch (unit(time)) {
+    case null:
     case 'ms': return number
     case 's': return number * 1000
     case 'm': return number * 60000
